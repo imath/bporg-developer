@@ -67,7 +67,7 @@ function bporg_developer_starter_content() {
     add_theme_support( 'starter-content', array(
         'widgets' => array(
             // Place the BP REST API Chapters accordeon.
-			'bp-rest-api-handbook' => array(
+            'bp-rest-api-handbook' => array(
                 'bp-rest-api-chapters' => array(
                     'handbook_pages',
                     array(
@@ -105,19 +105,19 @@ function bporg_developer_starter_content() {
 
         // Create initial pages.
         'posts' => array(
-			'landing' => array(
+            'landing' => array(
                 'post_title' => __( 'Home', 'bporg-developer' ),
                 'post_type'  => 'page',
                 'post_name'  => 'landing',
-				'template'   => 'page-home-landing.php',
-			),
-			'reference' => array(
+                'template'   => 'page-home-landing.php',
+            ),
+            'reference' => array(
                 'post_title' => __( 'Reference', 'bporg-developer' ),
                 'post_type'  => 'page',
                 'post_name'  => 'reference',
-				'template'   => 'page-reference-landing.php',
-			),
-			'bp-rest-api' => array(
+                'template'   => 'page-reference-landing.php',
+            ),
+            'bp-rest-api' => array(
                 'post_title'   => __( 'BP REST API Handbook', 'bporg-developer' ),
                 'post_type'    => 'bp-rest-api-handbook',
                 'post_name'    => 'bp-rest-api',
@@ -127,16 +127,16 @@ function bporg_developer_starter_content() {
         ),
 
         // Default to a static front page and assign the front and posts pages.
-		'options' => array(
-			'show_on_front'  => 'page',
-			'page_on_front'  => '{{landing}}',
+        'options' => array(
+            'show_on_front'  => 'page',
+            'page_on_front'  => '{{landing}}',
         ),
 
         // Set the site title and description.
-		'theme_mods'  => array(
-			'blogname'        => __( 'BuddyPress Developer Resources', 'bporg-developer' ),
-			'blogdescription' => __( 'Imagination has no limits.', 'bporg-developer' ),
-		),
+        'theme_mods'  => array(
+            'blogname'        => __( 'BuddyPress Developer Resources', 'bporg-developer' ),
+            'blogdescription' => __( 'Imagination has no limits.', 'bporg-developer' ),
+        ),
 
         // Set up nav menus
         'nav_menus'   => array(
@@ -179,12 +179,12 @@ function bporg_developer_starter_content() {
 
             // Assign a menu to the "devhub-menu" location.
             'devhub-menu' => array(
-				'name'  => __( 'DevHub menu', 'bporg-developer' ),
-				'items' => array(
-					'link_home' => array(
+                'name'  => __( 'DevHub menu', 'bporg-developer' ),
+                'items' => array(
+                    'link_home' => array(
                         'title' => __( 'All Developer Resources', 'bporg-developer' ),
                     ),
-				),
+                ),
             ),
 
             // Assign a menu to the "reference-home-api" location.
