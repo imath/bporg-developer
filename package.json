@@ -1,0 +1,32 @@
+{
+  "author": "imath",
+  "bugs": {
+    "url": "https://github.com/imath/bporg-developer/issues"
+  },
+  "description": "A wporg-developer's kid.",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-check-dependencies": "^1.0.0",
+    "grunt-checktextdomain": "~1.0.1",
+    "grunt-git-archive": "~0.0.3",
+    "grunt-legacy-util": "^1.0.0",
+    "grunt-wp-i18n": "^1.0.2",
+    "matchdep": "^2.0.0"
+  },
+  "engines": {
+    "node": "10.13.0"
+  },
+  "keywords": [
+    "theme",
+    "developer",
+    "resources"
+  ],
+  "homepage": "https://developer.buddypress.org",
+  "license": "GPL-2.0+",
+  "name": "bporg-developer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imath/bporg-developer.git"
+  },
+  "version": "1.0.0"
+}
