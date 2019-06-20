@@ -123,7 +123,7 @@ function bporg_developer_starter_content() {
                 'post_name'    => 'bp-rest-api',
                 'menu_order'   => 0,
                 'post_content' => __( 'Let’s start documenting the BP REST API!', 'bporg-developer' ),
-			),
+            ),
         ),
 
         // Default to a static front page and assign the front and posts pages.
