@@ -241,7 +241,10 @@ div[class*="-table-of-contents-container"] .current-menu-item > .expandable butt
 	color: rgb(190, 54, 49);
 }
 
-.devhub-wrap a:hover {
+.devhub-wrap a:hover,
+.post-type-archive-handbook ul.items li a:hover,
+.single-handbook ul.items li a:hover,
+.table-of-contents ul.items li a:hover {
 	color: rgb(221, 130, 59);
 }
 
