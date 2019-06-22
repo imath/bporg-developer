@@ -293,7 +293,7 @@ function bporg_developer_get_site_section_url() {
         case 'bp-rest-api':
             return home_url( '/' . $parts[0] . '/' );
         default:
-            return home_url( '/' );
+            return apply_filters( 'bporg_developer_get_site_section_url', home_url( '/' ), $parts[0] );
     }
 }
 

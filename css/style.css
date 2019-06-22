@@ -1,9 +1,9 @@
 #header {
-    background-color: #be3631;
+	background-color: #be3631;
 	border-bottom: 1px solid #9e1611;
-    width: 100%;
-    z-index: 99;
-    font-size: 13px;
+	width: 100%;
+	z-index: 99;
+	font-size: 13px;
 }
 
 #header-inner {
@@ -14,33 +14,33 @@
 }
 
 @media screen and (min-width: 960px) {
-    #header-inner, #footer {
-        max-width: 960px;
-    }
+	#header-inner, #footer {
+		max-width: 960px;
+	}
 }
 
 #header #network-title {
-    text-indent: -9999px;
-    width: 265px;
+	text-indent: -9999px;
+	width: 265px;
 }
 
 #header #network-title a {
 	margin-top: 8px;
 	width: 265px;
 	height: 62px;
-    float: left;
-    background: url( '../images/buddypress-logo.png' ) no-repeat 0 0;
+	float: left;
+	background: url( '../images/buddypress-logo.png' ) no-repeat 0 0;
 }
 
 .site-header,
 .menu-container,
 .devhub-wrap div#inner-search div#inner-search-icon-container div#inner-search-icon,
 .devhub-wrap div#inner-search {
-    background-color: #cf4944;
+	background-color: #cf4944;
 }
 
 .site-header h1 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 #bb-menu-icon,
@@ -80,7 +80,7 @@
 	border: 1px solid transparent;
 }
 #nav li a:hover {
-    background-color: #cf4944;
+	background-color: #cf4944;
 	color: rgba(255,255,255,0.9);
 }
 
@@ -130,83 +130,167 @@
 }
 
 .devhub-wrap {
-    border-bottom: solid 1px #efefef;
+	border-bottom: solid 1px #efefef;
 }
 
 .table-of-contents ul li,
 .no-bullets li,
 .restsplain-sidebar ul li {
-    list-style: none;
+	list-style: none;
 }
 
-.site-main #restsplain .restsplain {
-    display: block;
+.restsplain-wrapper {
+	max-width: 970px;
+	max-width: 97rem;
+	margin: 0 auto;
+	padding: 1.5em 1em;
 }
 
-.site-main #restsplain .restsplain-sidebar {
-    float: right;
-    width: 250px;
-    border: 1px solid #eee;
-    margin: 0 0 15px 15px;
-    z-index: 1;
-    position: relative;
-    color: #555d66;
-    background-color: #fff;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-    min-width: auto;
-    padding-bottom: 0;
+body.page-template-page-restsplain #restsplain .restsplain-sidebar {
+	clear: left;
+	margin: 0;
+	overflow: hidden;
+	width: 25%;
+	padding-top: 2rem;
+	min-width: auto;
+	font-size: 16px;
 }
 
-.site-main #restsplain .restsplain-sidebar .restsplain-menu {
-    padding: 0;
-    margin: 0;
+body.page-template-page-restsplain #restsplain .restsplain-sidebar .restsplain-menu {
+	padding: 0;
+	margin: 0;
+	font-size: 0.8em;
 }
 
-.site-main #restsplain .restsplain-sidebar .restsplain-namespaces h2 {
-    margin: 0;
-    padding: 0.7rem 1.2rem;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.3em;
-    color: #32373c;
-    text-transform: uppercase;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 0;
+body.page-template-page-restsplain #restsplain .restsplain-sidebar ul,
+body.page-template-page-restsplain #restsplain .restsplain-sidebar h2 {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+	line-height: 1.6;
 }
 
-.site-main #restsplain .restsplain-sidebar li.restsplain-menu-namespace ul {
-    margin: 0;
-    list-style-type: none;
-    padding: 0;
-    max-height: 150px;
-    overflow: auto;
+body.page-template-page-restsplain #restsplain .restsplain-sidebar h2 {
+	margin-bottom: auto;
 }
 
-.site-main #restsplain .restsplain-sidebar li.restsplain-menu-namespace h3 {
-    padding: 1.2rem 1.2rem 0;
+body.page-template-page-restsplain #restsplain .restsplain-sidebar ul li,
+body.page-template-page-restsplain #restsplain .restsplain-sidebar h2 {
+	border-top: 1px solid rgba(0, 0, 0, 0.05);
+	padding: 0;
+	position: relative;
 }
 
-.site-main #restsplain .restsplain-docs {
-    padding: 0;
-    min-width: auto;
-    width: auto;
+body.page-template-page-restsplain #restsplain .restsplain-sidebar h2:after {
+	font-family: dashicons;
+	content: "\f347";
+	position: absolute;
+	right: 0;
+	padding: 8px;
+	display: inline-block;
+	font-size: 20px;
+	width: auto;
+	height: 100%;
+	color: rgb(190, 54, 49);
+	background-color: #fafafa;
+	border: 0;
+	border-left: 1px solid rgba(0, 0, 0, 0.05);
+	border-radius: 0;
+	box-shadow: none;
+	-webkit-appearance: none;
+	font-weight: 400;
+	font-style: normal;
+	speak: none;
+	text-decoration: inherit;
+	text-transform: none;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	vertical-align: top;
+	text-align: center;
+	transition: color .1s ease-in;
+	line-height: 1;
 }
 
-.site-main #restsplain section {
-    display: inline;
-    overflow: inherit;
+body.page-template-page-restsplain #restsplain .restsplain-sidebar > ul > li:last-child {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.site-main #restsplain section.restsplain-response,
-.site-main #restsplain .restsplain-sidebar .restsplain-pages {
-    display: none;
+body.page-template-page-restsplain #restsplain .restsplain-sidebar ul li a {
+	display: block;
+	width: 100%;
+	font-size: 1.05em;
+	padding: 8px 40px 8px 8px;
+	text-decoration: none;
 }
 
-.site-main #restsplain h1,
-.site-main #restsplain h2,
-.site-main #restsplain h3,
-.site-main #restsplain h4 {
-    clear: none;
+body.page-template-page-restsplain #restsplain .restsplain-sidebar ul li a.active {
+	color: #555;
+	background-color: #fff;
+}
+
+body.page-template-page-restsplain #restsplain .restsplain-sidebar ul li a:hover,
+body.page-template-page-restsplain #restsplain .restsplain-sidebar ul li a:focus {
+	color: #fff;
+	background-color: rgb(190, 54, 49);
+}
+
+body.page-template-page-restsplain #restsplain .restsplain-sidebar li.restsplain-menu-namespace h3 {
+	padding: 1.2rem 1.2rem 0;
+}
+
+body.page-template-page-restsplain #restsplain .restsplain-docs {
+	padding: 2rem 0 4rem 4rem;
+	background: #fff;
+	box-sizing: border-box;
+	width: 72%;
+}
+
+body.page-template-page-restsplain #restsplain section {
+	display: inline;
+	overflow: inherit;
+}
+
+body.page-template-page-restsplain #restsplain h1,
+body.page-template-page-restsplain #restsplain h2,
+body.page-template-page-restsplain #restsplain h3,
+body.page-template-page-restsplain #restsplain h4 {
+	clear: none;
+}
+
+body.page-template-page-restsplain .restsplain-docs > h2:first-child,
+body.page-template-page-restsplain .restsplain-page h1,
+body.page-template-page-restsplain .restsplain-auth h1,
+body.page-template-page-restsplain .restsplain-endpoint h1 {
+	background-color: inherit;
+	font-size: 28px;
+	font-size: 3rem;
+	line-height: 32px;
+	line-height: 3.2rem;
+	font-weight: 300;
+	margin-bottom: 1.5rem;
+	color: #404040;
+	padding: 0;
+}
+
+body.page-template-page-restsplain .restsplain-page-content,
+body.page-template-page-restsplain .restsplain-auth .restsplain-description,
+body.page-template-page-restsplain .restsplain-auth h3,
+body.page-template-page-restsplain .restsplain-endpoint-data,
+body.page-template-page-restsplain .restsplain-endpoint-method-switcher,
+body.page-template-page-restsplain .restsplain-endpoint-url,
+body.page-template-page-restsplain .restsplain-endpoint .restsplain-route-description,
+body.page-template-page-restsplain .restsplain-endpoint > h3,
+body.page-template-page-restsplain .restsplain-page-excerpt,
+body.page-template-page-restsplain .restsplain-page h3 {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+body.page-template-page-restsplain .restsplain-docs pre {
+	background-color: #fff;
+	padding: 0;
+	margin: 1.5em 0;
 }
 
 div[class*="-table-of-contents-container"] ul a:hover,
@@ -216,8 +300,8 @@ div[class*="-table-of-contents-container"] > ul > li.open > div > a:not(:focus),
 div[class*="-table-of-contents-container"] .current-menu-ancestor .expandable button.dashicons:hover,
 div[class*="-table-of-contents-container"] .current-menu-item .expandable button.dashicons:hover,
 div[class*="-table-of-contents-container"] ul li button.dashicons:focus {
-    color: #fff !important;
-    background-color: rgb(190, 54, 49) !important;
+	color: #fff !important;
+	background-color: rgb(190, 54, 49) !important;
 }
 
 div[class*="-table-of-contents-container"] ul li button.dashicons,
@@ -226,15 +310,15 @@ div[class*="-table-of-contents-container"] .current-menu-item > .expandable butt
 }
 
 .devhub-wrap .source-code-links span {
-    border: none;
-    margin-left: 0;
-    padding-left: 0;
-    margin-right: 1em;
-    padding-right: 1em;
+	border: none;
+	margin-left: 0;
+	padding-left: 0;
+	margin-right: 1em;
+	padding-right: 1em;
 }
 
 .devhub-wrap .source-code-links span:first-child {
-    border-right: 1px solid #999;
+	border-right: 1px solid #999;
 }
 
 .devhub-wrap a {
@@ -329,7 +413,7 @@ body .meta a,
 	}
 	#main {
 		margin: 100px 10px 40px 10px;
-    }
+	}
 	#footer {
 		padding: 10px;
 		margin: 10px;
@@ -389,10 +473,4 @@ body .meta a,
 	#header #nav:focus #bb-menu-icon:before {
 		color: #fff;
 	}
-}
-
-@media (min-width: 971px) {
-    .site-main #restsplain .restsplain-sidebar {
-        margin: -15px -30px 15px 15px;
-    }
 }

@@ -109,3 +109,46 @@ function bporg_developer_resplain_config( $config = array() ) {
     return $config;
 }
 add_filter( 'restsplain_config', 'bporg_developer_resplain_config' );
+
+/**
+ * Set the section title for the Restsplain page.
+ *
+ * @since 1.0.0
+ *
+ * @param string $section_title The title of the section displayed.
+ * @return string The title of the section displayed.
+ */
+function bporg_developer_set_restsplain_section_title( $section_title = '' ) {
+	if ( is_singular() && is_page_template() ) {
+		$page_id = get_queried_object_id();
+
+		if ( 'page-restsplain.php' === get_page_template_slug( $page_id ) ) {
+			$section_title = __( 'BP REST API Reference', 'bporg-developer' );
+		}
+	}
+
+	return $section_title;
+}
+add_filter( 'bporg_developer_get_site_section_title', 'bporg_developer_set_restsplain_section_title' );
+
+/**
+ * Set the section URL for the Restsplain page.
+ *
+ * @since 1.0.0
+ *
+ * @param string $url  The URL of the section displayed.
+ * @param string $slug The slug of the section displayed.
+ * @return string The URL of the section displayed.
+ */
+function bporg_developer_set_restsplain_section_url( $url = '', $slug = '' ) {
+	if ( is_singular() && is_page_template() ) {
+		$page = get_queried_object();
+
+		if ( $slug === $page->post_name ) {
+			$url = get_permalink( $page );
+		}
+	}
+
+	return $url;
+}
+add_filter( 'bporg_developer_get_site_section_url', 'bporg_developer_set_restsplain_section_url', 10, 2 );
