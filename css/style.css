@@ -209,9 +209,20 @@
     clear: none;
 }
 
-div[class*="-table-of-contents-container"] ul a:hover, div[class*="-table-of-contents-container"] ul a:focus {
-    color: #fff;
-    background-color: rgb(190, 54, 49);
+div[class*="-table-of-contents-container"] ul a:hover,
+div[class*="-table-of-contents-container"] ul a:focus,
+div[class*="-table-of-contents-container"] ul li button.dashicons:hover,
+div[class*="-table-of-contents-container"] > ul > li.open > div > a:not(:focus),
+div[class*="-table-of-contents-container"] .current-menu-ancestor .expandable button.dashicons:hover,
+div[class*="-table-of-contents-container"] .current-menu-item .expandable button.dashicons:hover,
+div[class*="-table-of-contents-container"] ul li button.dashicons:focus {
+    color: #fff !important;
+    background-color: rgb(190, 54, 49) !important;
+}
+
+div[class*="-table-of-contents-container"] ul li button.dashicons,
+div[class*="-table-of-contents-container"] .current-menu-item > .expandable button.dashicons:not(:focus) {
+	color: rgb(190, 54, 49);
 }
 
 .devhub-wrap .source-code-links span {
