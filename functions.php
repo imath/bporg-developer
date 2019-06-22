@@ -303,26 +303,23 @@ function bporg_developer_get_site_section_url() {
  * @return string The section title.
  */
 function bporg_developer_get_site_section_title() {
-    $parts         = explode( '/', $GLOBALS['wp']->request );
-    $section_title = '';
+    $parts = explode( '/', $GLOBALS['wp']->request );
 
     switch ( $parts[0] ) {
         case 'resources':
         case 'resource':
-            $section_title = sprintf( __( 'Developer Resources: %s', 'bporg-developer' ), get_the_title() );
+            return sprintf( __( 'Developer Resources: %s', 'bporg-developer' ), get_the_title() );
         case 'reference':
-            $section_title =  __( 'Code Reference', 'bporg-developer' );
+            return  __( 'Code Reference', 'bporg-developer' );
         case 'plugins':
-            $section_title = __( 'Plugin Handbook', 'bporg-developer' );
+            return __( 'Plugin Handbook', 'bporg-developer' );
         case 'themes':
-            $section_title = __( 'Theme Handbook', 'bporg-developer' );
+            return __( 'Theme Handbook', 'bporg-developer' );
         case 'bp-rest-api':
-            $section_title = __( 'BP REST API Handbook', 'bporg-developer' );
+            return __( 'BP REST API Handbook', 'bporg-developer' );
         default:
-            $section_title = __( 'Developer Resources', 'bporg-developer' );
+            return apply_filters( 'bporg_developer_get_site_section_title', __( 'Developer Resources', 'bporg-developer' ) );
     }
-
-    return apply_filters( 'bporg_developer_get_site_section_title', $section_title );
 }
 
 /**
