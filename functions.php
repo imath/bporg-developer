@@ -72,6 +72,8 @@ add_filter( 'handbook_label', __NAMESPACE__ . '\\bporg_developer_set_rest_api_la
 function bporg_developer_starter_content() {
     register_nav_menu( 'header-nav-menu', 'Main nav bar' );
 
+    add_theme_support( 'title-tag' );
+
     add_theme_support( 'starter-content', array(
         'widgets' => array(
             // Place the BP REST API Chapters accordeon.
