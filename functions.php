@@ -10,6 +10,14 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * BP REST API documentation generator.
+ */
+if ( function_exists( '\\Restsplain\\init' ) ) {
+	// Filters to adapt Restsplain to bporg-developer.
+	require __DIR__ . '/inc/restsplain-filters.php';
+}
+
+/**
  * Enqueue the needed styles.
  *
  * @since 1.0.0
@@ -135,7 +143,7 @@ function bporg_developer_starter_content() {
         // Set the site title and description.
         'theme_mods'  => array(
             'blogname'        => __( 'BuddyPress Developer Resources', 'bporg-developer' ),
-            'blogdescription' => __( 'Imagination has no limits.', 'bporg-developer' ),
+            'blogdescription' => __( 'Your best buddies ever to help you code.', 'bporg-developer' ),
         ),
 
         // Set up nav menus
@@ -295,22 +303,26 @@ function bporg_developer_get_site_section_url() {
  * @return string The section title.
  */
 function bporg_developer_get_site_section_title() {
-    $parts = explode( '/', $GLOBALS['wp']->request );
+    $parts         = explode( '/', $GLOBALS['wp']->request );
+    $section_title = '';
+
     switch ( $parts[0] ) {
         case 'resources':
         case 'resource':
-            return sprintf( __( 'Developer Resources: %s', 'bporg-developer' ), get_the_title() );
+            $section_title = sprintf( __( 'Developer Resources: %s', 'bporg-developer' ), get_the_title() );
         case 'reference':
-            return __( 'Code Reference', 'bporg-developer' );
+            $section_title =  __( 'Code Reference', 'bporg-developer' );
         case 'plugins':
-            return __( 'Plugin Handbook', 'bporg-developer' );
+            $section_title = __( 'Plugin Handbook', 'bporg-developer' );
         case 'themes':
-            return __( 'Theme Handbook', 'bporg-developer' );
+            $section_title = __( 'Theme Handbook', 'bporg-developer' );
         case 'bp-rest-api':
-            return __( 'BP REST API Handbook', 'bporg-developer' );
+            $section_title = __( 'BP REST API Handbook', 'bporg-developer' );
         default:
-            return __( 'Developer Resources', 'bporg-developer' );
+            $section_title = __( 'Developer Resources', 'bporg-developer' );
     }
+
+    return apply_filters( 'bporg_developer_get_site_section_title', $section_title );
 }
 
 /**
