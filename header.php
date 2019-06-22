@@ -42,7 +42,7 @@
 
 		<?php if ( is_front_page() ) : ?>
 
-            <p class="site-description"><?php _e( 'Imagination has no limits.', 'bporg-developer' ); ?></p>
+            <p class="site-description"><?php bloginfo( 'description', 'display' ); ?></p>
 
         <?php else : ?>
 
