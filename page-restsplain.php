@@ -20,12 +20,12 @@ get_header(); ?>
                         <?php the_content(); ?>
                         <?php
                             wp_link_pages( array(
-                                'before' => '<div class="page-links">' . __( 'Pages:', 'wporg' ),
+                                'before' => '<div class="page-links">' . __( 'Pages:', 'bporg-developer' ),
                                 'after'  => '</div>',
                             ) );
                         ?>
                     </div><!-- .entry-content -->
-                    <?php edit_post_link( __( 'Edit', 'wporg' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                    <?php edit_post_link( __( 'Edit', 'bporg-developer' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
                 </article><!-- #post-## -->
 
                 <?php
