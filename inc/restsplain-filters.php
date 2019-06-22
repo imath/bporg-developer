@@ -74,9 +74,21 @@ function bporg_developer_restsplain_schema( $data ) {
 		}
 	} else {
 		$data['namespaces'] = array( 'buddypress/v1' );
-		$routes = array_intersect_key( $data['routes'], array( '/' => true ) );
+		$routes             = array_intersect_key( $data['routes'], array( '/' => true ) );
+		$page_titles        = array_flip( wp_list_pluck( $data['pages'], 'title' ) );
+
+		foreach( $bp_endpoints as $bp_route => $route_data ) {
+			if ( isset( $page_titles[ $bp_route ] ) ) {
+				$bp_endpoints[ $bp_route ]['description'] = $data['pages'][ $page_titles[ $bp_route ] ]['content'];
+				$bp_endpoints[ $bp_route ]['excerpt']     = $data['pages'][ $page_titles[ $bp_route ] ]['excerpt'];
+				unset( $data['pages'][ $page_titles[ $bp_route ] ] );
+			}
+		}
+
+		// Merge only what we need.
 		$data['routes'] = array_merge( $routes, $bp_endpoints );
 	}
+
 	return $data;
 }
 add_filter( 'restsplain_schema', 'bporg_developer_restsplain_schema' );
