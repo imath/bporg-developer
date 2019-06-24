@@ -11,4 +11,4 @@ A [wporg-developer](https://meta.trac.wordpress.org/browser/sites/trunk/wordpres
 - The [WP Parser](https://github.com/WordPress/phpdoc-parser) plugin.
 
 ## Optional
-- The [Restsplain](https://github.com/imath/Restsplain) plugin.
+- This [fork](https://github.com/imath/Restsplain/releases/tag/1.1.0-bp-rest-api) of the [Restsplain](https://github.com/humanmade/Restsplain) plugin.
