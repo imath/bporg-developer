@@ -18,6 +18,8 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'handbook' ); ?>
 
+			<?php \WPorg_Handbook_Navigation::show_nav_links( 'BP REST API Table of Contents' ); ?>
+
 		<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
