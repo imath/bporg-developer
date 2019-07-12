@@ -26,7 +26,7 @@ get_header(); ?>
                             get_template_part( 'content', 'page' );
                             
                         else: ?>
-                            <h2><?php esc_html_e( 'Under construction', 'bpord-developer' ); ?></h2>
+                            <h2><?php esc_html_e( 'Under construction', 'bporg-developer' ); ?></h2>
                         <?php endif; ?>
 
                         <?php

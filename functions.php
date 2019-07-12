@@ -10,14 +10,6 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * BP REST API documentation generator.
- */
-if ( function_exists( '\\Restsplain\\init' ) ) {
-	// Filters to adapt Restsplain to bporg-developer.
-	require __DIR__ . '/inc/restsplain-filters.php';
-}
-
-/**
  * Enqueue the needed styles.
  *
  * @since 1.0.0
@@ -125,7 +117,7 @@ function bporg_developer_starter_content() {
                 'post_title' => __( 'Reference', 'bporg-developer' ),
                 'post_type'  => 'page',
                 'post_name'  => 'reference',
-                'template'   => 'page-reference-landing.php',
+                'template'   => 'page-under-construction.php',
             ),
             'bp-rest-api' => array(
                 'post_title'   => __( 'BP REST API Handbook', 'bporg-developer' ),
