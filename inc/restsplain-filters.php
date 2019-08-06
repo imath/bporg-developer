@@ -22,31 +22,34 @@ function bporg_developer_restsplain_schema( $data ) {
     $schema_url   = 'https://cldup.com/c1qvLy1iYB.json';
     $bp_endpoints = null;
 
-    /**
-     * When used as a shortcode, it's possible to customize the schema
-     * URL: [restsplain file="https://link.to/bp-endpoints.json"]
-     */
-	if ( $page_id ) {
-		$page = get_post( $page_id );
-		preg_match( '/' . get_shortcode_regex( array( 'restsplain' ) ) . '/', $page->post_content, $matches );
-		if ( isset( $matches[3] ) ) {
-			$args = shortcode_parse_atts( $matches[3] );
-			if ( isset( $args['file'] ) && $args['file'] ) {
-				$schema_url = $args['file'];
+	// Only try to use the saved schema URL if the BP REST API is not active.
+	if ( ! function_exists( 'bp_rest_version' ) ) {
+		/**
+		 * When used as a shortcode, it's possible to customize the schema
+		 * URL: [restsplain file="https://link.to/bp-endpoints.json"]
+		 */
+		if ( $page_id ) {
+			$page = get_post( $page_id );
+			preg_match( '/' . get_shortcode_regex( array( 'restsplain' ) ) . '/', $page->post_content, $matches );
+			if ( isset( $matches[3] ) ) {
+				$args = shortcode_parse_atts( $matches[3] );
+				if ( isset( $args['file'] ) && $args['file'] ) {
+					$schema_url = $args['file'];
+				}
 			}
 		}
-    }
 
-    /**
-     * Try to fetch the BP endpoints.
-     *
-     * NB: this allowes to avoid having BuddyPress & the BP REST API
-     * activated on the documentation site.
-     */
-    $response = wp_remote_get( $schema_url );
-    if ( ! is_wp_error( $response ) && 200 === wp_remote_retrieve_response_code( $response ) ) {
-        $bp_endpoints = json_decode( wp_remote_retrieve_body( $response ), true );
-    }
+		/**
+		 * Try to fetch the BP endpoints.
+		 *
+		 * NB: this allowes to avoid having BuddyPress & the BP REST API
+		 * activated on the documentation site.
+		 */
+		$response = wp_remote_get( $schema_url );
+		if ( ! is_wp_error( $response ) && 200 === wp_remote_retrieve_response_code( $response ) ) {
+			$bp_endpoints = json_decode( wp_remote_retrieve_body( $response ), true );
+		}
+	}
 
 	if ( ! is_array( $bp_endpoints ) ) {
 		if ( isset( $data['namespaces'] ) && is_array( $data['namespaces'] ) ) {
