@@ -5,7 +5,7 @@
   },
   "description": "A wporg-developer's kid.",
   "devDependencies": {
-    "grunt": "^1.0.3",
+    "grunt": "^1.5.3",
     "grunt-check-dependencies": "^1.0.0",
     "grunt-checktextdomain": "~1.0.1",
     "grunt-git-archive": "~0.0.3",
